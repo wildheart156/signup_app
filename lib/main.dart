@@ -159,9 +159,15 @@ class _SignupPageState extends State<SignupPage> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Welcome! Account created successfully.'),
+                      SnackBar(
+                        content: const Text('Account created!'),
                         backgroundColor: Colors.green,
+                        action: SnackBarAction(
+                          label: 'UNDO',
+                          onPressed: () {
+                            // Handle undo action
+                          },
+                        ),
                       ),
                     );
                   }
